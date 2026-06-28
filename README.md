@@ -1,9 +1,9 @@
-# hsc-hybrid-demo
+# Hsc-hybrid-demo
 
 A five-node hydrogen-supply-chain siting problem where a **trained neural
 surrogate is embedded directly inside an exact Gurobi MILP**. It's the runnable
 prototype from Appendix A of *A Gurobi-Accelerated Hybrid AI–OR Framework for
-Resilient Hydrogen Supply Chain Network Design* — the smallest version that
+Resilient Hydrogen Supply Chain Network Design*, the smallest version that
 proves the seam holds.
 
 ## The idea
@@ -14,9 +14,9 @@ build** (discrete, combinatorial), the **physics of storing and moving H₂**
 solver is excellent at the first and hands you guarantees; it stalls on the
 other two. So we split the work by *what has to be guaranteed*:
 
-- **The solver owns the guarantees** — mass balance, capacity, and the discrete
+- **The solver owns the guarantees**, mass balance, capacity, and the discrete
   build decisions. These are hard constraints; a neural net doesn't get to vote.
-- **A learned model owns the nonlinear, messy part** — here, an operating
+- **A learned model owns the nonlinear, messy part**, here, an operating
   penalty standing in for compression / boil-off stress and the fragility you
   get from piling all your production onto one or two nodes.
 
@@ -54,11 +54,11 @@ python hsc_demo.py
 ```
 
 `gurobipy` ships with a size-limited license that is more than enough for this
-model — no Gurobi account needed.
+model no Gurobi account needed.
 
 ## What you should see
 
-Flip the surrogate on and the optimal plan changes — it stops concentrating and
+Flip the surrogate on and the optimal plan changes, it stops concentrating and
 spreads out, while still hitting demand exactly:
 
 ```
